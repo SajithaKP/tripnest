@@ -1,0 +1,1 @@
+<?php namespace App\Models; use Illuminate\Database\Eloquent\Model; class Inquiry extends Model{protected $fillable=['name','email','phone','travel_date','travellers','package_name','message','status'];protected $casts=['travel_date'=>'date'];}

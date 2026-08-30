@@ -1,0 +1,1 @@
+<?php namespace App\Models; use Illuminate\Database\Eloquent\Model; class Photo extends Model{protected $fillable=['title','destination','caption','image_path','active','sort_order'];protected $casts=['active'=>'boolean'];}

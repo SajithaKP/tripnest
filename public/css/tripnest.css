@@ -1,0 +1,2628 @@
+:root {
+    --navy: #063e58;
+    --aqua: #3cc1ac;
+    --lime: #b7e928;
+    --mint: #efffff;
+    --cream: #fff9ee;
+    --text: #183f4e;
+    --muted: #6d8b94;
+    --orange: #ffad18;
+    --shadow: 0 18px 45px #063e5815
+}
+
+* {
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    margin: 0;
+    font-family: "DM Sans", sans-serif;
+    color: var(--text);
+    overflow-x: hidden
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+.container {
+    width: min(1180px, calc(100% - 36px));
+    margin: auto
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+    background: linear-gradient(#00344f99, transparent);
+    color: #fff
+}
+
+.nav {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 20px
+}
+
+.logo>b {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: var(--aqua);
+    color: #063e58;
+    display: grid;
+    place-items: center;
+    font-size: 12px
+}
+
+.logo small {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: .7
+}
+
+.nav nav {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    font-size: 12px
+}
+
+.navbtn {
+    border: 1px solid #fff8;
+    border-radius: 99px;
+    padding: 10px 15px
+}
+
+.hamb {
+    display: none;
+    background: none;
+    border: 0;
+    color: #fff;
+    font-size: 25px
+}
+
+.hero {
+    height: 690px;
+    position: relative;
+    background: #0c8196;
+    color: #fff;
+    overflow: hidden
+}
+
+.slides,
+.slide {
+    position: absolute;
+    inset: 0
+}
+
+.slide {
+    opacity: 0;
+    transition: opacity 1s
+}
+
+.slide.active {
+    opacity: 1
+}
+
+.slide img,
+.slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #002f48aa, #002f481f)
+}
+
+.heroText {
+    position: relative;
+    padding-top: 220px;
+    z-index: 2
+}
+
+.heroText small,
+.head>small,
+.split small,
+.contact small,
+.final small {
+    letter-spacing: 3px;
+    font-weight: 800;
+    font-size: 10px
+}
+
+.hero h1 {
+    font: 800 clamp(58px, 9vw, 110px)/.9 "Playfair Display";
+    margin: 15px 0;
+    letter-spacing: -5px
+}
+
+.hero p {
+    max-width: 560px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #e7ffff
+}
+
+.lime,
+.aqua {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 99px;
+    padding: 14px 23px;
+    font-weight: 800
+}
+
+.lime {
+    background: var(--lime);
+    color: #163a27
+}
+
+.aqua {
+    background: var(--aqua);
+    color: #073b4d
+}
+
+.wave {
+    position: absolute;
+    bottom: -1px;
+    left: -5%;
+    width: 110%;
+    height: 65px;
+    background: var(--mint);
+    border-radius: 50% 50% 0 0
+}
+
+.dots {
+    position: absolute;
+    z-index: 4;
+    bottom: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px
+}
+
+.dots button {
+    width: 9px;
+    height: 9px;
+    border: 0;
+    border-radius: 50%;
+    background: #fff8
+}
+
+.dots button.active {
+    width: 27px;
+    border-radius: 10px;
+    background: var(--lime)
+}
+
+.section {
+    padding: 90px 0
+}
+
+.mint {
+    background: var(--mint)
+}
+
+.cream {
+    background: var(--cream)
+}
+
+.head {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 42px
+}
+
+.head>small,
+.split>div>small,
+.contact>div>small {
+    color: #0b9a86
+}
+
+.head h2,
+.split h2,
+.contact h2 {
+    font: 700 50px/1.05 "Playfair Display";
+    margin: 12px 0
+}
+
+.head h2 i,
+.split h2 i,
+.contact h2 i {
+    color: var(--aqua)
+}
+
+.head p,
+.split p,
+.contact p {
+    color: var(--muted);
+    line-height: 1.8
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    flex-wrap: wrap;
+    margin: -15px 0 32px
+}
+
+.filters button {
+    border: 1px solid #cce2e1;
+    background: #fff;
+    border-radius: 99px;
+    padding: 9px 15px;
+    color: var(--text);
+    cursor: pointer
+}
+
+.filters button.active {
+    background: var(--aqua);
+    border-color: var(--aqua)
+}
+
+.grid3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px
+}
+
+.grid4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px
+}
+
+.card,
+.resort {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid #e1eeee
+}
+
+.pic {
+    height: 210px;
+    position: relative;
+    overflow: hidden
+}
+
+.pic img,
+.resort>img,
+.activity>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.pic>b,
+.pic>span {
+    position: absolute;
+    top: 12px;
+    padding: 6px 10px;
+    border-radius: 99px;
+    font-size: 10px
+}
+
+.pic>b {
+    right: 12px;
+    background: var(--lime)
+}
+
+.pic>span {
+    left: 12px;
+    background: #fffdd
+}
+
+.body {
+    padding: 18px
+}
+
+.body>em,
+.resort em,
+.quote em {
+    font-style: normal;
+    color: var(--orange);
+    font-size: 11px
+}
+
+.body h3 {
+    font-size: 18px;
+    margin: 7px 0
+}
+
+.body p,
+.activity p,
+.resort p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6
+}
+
+.body>small {
+    font-size: 10px;
+    color: #78939a
+}
+
+.price {
+    margin-top: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.price strong {
+    font-size: 19px
+}
+
+.price a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #e5faf5;
+    display: grid;
+    place-items: center;
+    color: #138a7b;
+    font-weight: 900
+}
+
+.split {
+    padding: 105px 0;
+    background: linear-gradient(#f2ffff, #dff1ef)
+}
+
+.splitin {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center
+}
+
+.stats {
+    display: flex;
+    gap: 42px;
+    margin: 25px 0
+}
+
+.stats>b {
+    font-size: 25px
+}
+
+.stats small {
+    display: block;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0
+}
+
+.island {
+    height: 390px;
+    position: relative
+}
+
+.island>div {
+    width: 310px;
+    height: 310px;
+    border: 11px solid #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin: auto
+}
+
+.island img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.island>span {
+    position: absolute;
+    right: 0;
+    bottom: 25px;
+    font-size: 90px
+}
+
+.island>b {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    background: #fff;
+    padding: 15px 18px;
+    border-radius: 15px;
+    box-shadow: var(--shadow)
+}
+
+.island>b small {
+    display: block;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0
+}
+
+.teal,
+.testimonials {
+    background: linear-gradient(135deg, #37c0ae, #087f95);
+    color: #fff
+}
+
+.head.light h2,
+.head.light p {
+    color: #fff
+}
+
+.activity {
+    border-radius: 18px;
+    overflow: hidden;
+    background: #ffffff1b;
+    border: 1px solid #ffffff2b;
+    position: relative
+}
+
+.activity>img {
+    height: 180px
+}
+
+.activity>b {
+    position: absolute;
+    right: 10px;
+    top: 145px;
+    background: #fff;
+    color: #0a8a79;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center
+}
+
+.activity>div {
+    padding: 16px
+}
+
+.activity h3 {
+    margin: 4px 0
+}
+
+.activity small,
+.activity p {
+    opacity: .8
+}
+
+.activity strong {
+    color: var(--lime)
+}
+
+.resort>img {
+    height: 210px
+}
+
+.resort>div {
+    padding: 18px
+}
+
+.resort h3 {
+    margin: 7px 0
+}
+
+.resort strong {
+    font-size: 15px
+}
+
+.gallery {
+    columns: 4 220px;
+    column-gap: 15px
+}
+
+.gallery figure {
+    break-inside: avoid;
+    margin: 0 0 15px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative
+}
+
+.gallery img {
+    width: 100%;
+    transition: .4s
+}
+
+.gallery figure:hover img {
+    transform: scale(1.05)
+}
+
+figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 13px 12px;
+    background: linear-gradient(transparent, #00334dbb);
+    color: #fff
+}
+
+figcaption b,
+figcaption small {
+    display: block
+}
+
+.testimonials {
+    padding: 90px 0
+}
+
+.quote {
+    background: #fff;
+    color: var(--text);
+    border-radius: 18px;
+    padding: 25px
+}
+
+.quote p {
+    color: var(--muted);
+    line-height: 1.7
+}
+
+.quote small {
+    display: block;
+    color: var(--muted);
+    margin-top: 3px
+}
+
+.final {
+    padding: 120px 0;
+    background: linear-gradient(#003b4c99, #003b4c99), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85') center/cover;
+    color: #fff
+}
+
+.final h2 {
+    font: 700 70px/1 "Playfair Display";
+    margin: 15px 0 28px
+}
+
+.final h2 i {
+    color: #b7f1e8
+}
+
+.contact {
+    padding: 90px 0;
+    background: var(--cream)
+}
+
+.contactin {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center
+}
+
+.points {
+    display: grid;
+    gap: 14px;
+    margin-top: 30px
+}
+
+.contact form {
+    background: #fff;
+    padding: 28px;
+    border-radius: 22px;
+    box-shadow: var(--shadow)
+}
+
+label {
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    margin-bottom: 13px
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    margin-top: 6px;
+    border: 1px solid #d7e8e7;
+    border-radius: 10px;
+    padding: 12px;
+    outline: 0
+}
+
+.tw {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px
+}
+
+.full {
+    width: 100%;
+    border: 0;
+    cursor: pointer
+}
+
+.errors {
+    background: #fff0f0;
+    color: #a44;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 11px;
+    margin-bottom: 10px
+}
+
+footer {
+    background: #063e58;
+    color: #b5d8da;
+    padding-top: 60px
+}
+
+.foot {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 35px
+}
+
+.foot h4 {
+    color: #fff
+}
+
+.foot a {
+    display: block;
+    font-size: 12px;
+    margin: 9px 0
+}
+
+.copy {
+    text-align: center;
+    border-top: 1px solid #fff2;
+    padding: 18px;
+    margin-top: 45px;
+    font-size: 10px
+}
+
+.toast {
+    position: fixed;
+    top: 90px;
+    right: 18px;
+    z-index: 50;
+    background: #e7fbf5;
+    color: #087b68;
+    padding: 13px 17px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    font-size: 12px
+}
+
+.float {
+    position: fixed;
+    z-index: 2;
+    opacity: .15;
+    pointer-events: none
+}
+
+.fish {
+    left: -30px;
+    bottom: 15%;
+    animation: swim 16s linear infinite
+}
+
+.boat {
+    right: 7%;
+    top: 25%;
+    font-size: 35px;
+    animation: boat 5s ease-in-out infinite
+}
+
+.plane {
+    left: 8%;
+    top: 30%;
+    font-size: 25px;
+    animation: fly 18s linear infinite
+}
+
+@keyframes swim {
+    to {
+        transform: translateX(110vw)
+    }
+}
+
+@keyframes fly {
+    to {
+        transform: translateX(85vw) translateY(-8vh)
+    }
+}
+
+@keyframes boat {
+    50% {
+        transform: translateY(-10px) rotate(4deg)
+    }
+}
+
+.detailHero {
+    min-height: 570px;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    align-items: center
+}
+
+.detailHero h1 {
+    font: 700 65px/1 "Playfair Display";
+    max-width: 850px
+}
+
+.detailHero p {
+    font-size: 18px;
+    max-width: 650px
+}
+
+.detailHero>div>strong {
+    font-size: 28px
+}
+
+.detail {
+    display: grid;
+    grid-template-columns: 1.5fr .7fr;
+    gap: 60px
+}
+
+.detail h2 {
+    font: 700 36px "Playfair Display"
+}
+
+.detail article>p {
+    line-height: 1.9;
+    color: var(--muted)
+}
+
+.chip {
+    display: inline-block;
+    background: #e8faf6;
+    padding: 8px 12px;
+    border-radius: 99px;
+    font-size: 10px
+}
+
+.inc {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px
+}
+
+.inc>div {
+    background: #f2ffff;
+    padding: 18px;
+    border-radius: 15px
+}
+
+.inc p {
+    font-size: 12px;
+    color: var(--muted)
+}
+
+.detail aside {
+    background: #063e58;
+    color: #fff;
+    padding: 27px;
+    border-radius: 22px;
+    height: max-content;
+    position: sticky;
+    top: 90px
+}
+
+.detail aside p {
+    color: #b5d8da;
+    font-size: 12px;
+    line-height: 1.7
+}
+
+.wa {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    border: 1px solid #63ddca;
+    color: #9df6e6;
+    padding: 12px;
+    border-radius: 99px;
+    font-size: 11px
+}
+
+@media(max-width:950px) {
+    .grid4 {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .grid3 {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .foot {
+        grid-template-columns: 1.5fr 1fr 1fr
+    }
+
+    .contactin,
+    .splitin,
+    .detail {
+        grid-template-columns: 1fr
+    }
+
+    .detail aside {
+        position: static
+    }
+}
+
+@media(max-width:700px) {
+    .nav nav {
+        display: none;
+        position: absolute;
+        left: 15px;
+        right: 15px;
+        top: 70px;
+        background: #063e58;
+        padding: 10px;
+        border-radius: 15px;
+        flex-direction: column;
+        align-items: stretch
+    }
+
+    .nav nav.open {
+        display: flex
+    }
+
+    .hamb {
+        display: block
+    }
+
+    .hero {
+        height: 630px
+    }
+
+    .hero h1 {
+        font-size: 58px
+    }
+
+    .heroText {
+        padding-top: 205px
+    }
+
+    .grid3,
+    .grid4,
+    .tw,
+    .inc {
+        grid-template-columns: 1fr
+    }
+
+    .section {
+        padding: 70px 0
+    }
+
+    .head h2,
+    .split h2,
+    .contact h2 {
+        font-size: 40px
+    }
+
+    .final h2 {
+        font-size: 50px
+    }
+
+    .foot {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .detailHero h1 {
+        font-size: 48px
+    }
+}
+
+/* ========================================
+   HAPPY CUSTOMERS
+======================================== */
+
+.reviews-section {
+    position: relative;
+    padding: 100px 0 105px;
+    background: var(--mint);
+    overflow: hidden;
+}
+
+
+/* subtle ocean decoration */
+
+.reviews-section::before {
+    content: "〰";
+    position: absolute;
+    left: 5%;
+    top: 80px;
+    font-size: 70px;
+    color: var(--aqua);
+    opacity: .08;
+    transform: rotate(-8deg);
+    pointer-events: none;
+}
+
+.reviews-section::after {
+    content: "✦";
+    position: absolute;
+    right: 8%;
+    bottom: 80px;
+    font-size: 35px;
+    color: var(--aqua);
+    opacity: .12;
+    animation: reviewFloat 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.reviews-section .section-heading {
+    max-width: 700px;
+    margin: 0 auto 45px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+
+.reviews-section .section-heading small {
+    display: block;
+    color: #0b9a86;
+    letter-spacing: 3px;
+    font-weight: 800;
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+
+.reviews-section .section-heading h2 {
+    margin: 12px 0;
+    color: var(--navy);
+    font: 700 50px/1.05 "Playfair Display", serif;
+}
+
+
+.reviews-section .section-heading p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+
+/* ========================================
+   REVIEW GRID
+======================================== */
+
+.reviews-grid {
+    width: min(1180px, calc(100% - 36px));
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ========================================
+   REVIEW CARD
+======================================== */
+
+.review-card {
+    background: #fff;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    border: 1px solid #e1eeee;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+
+.review-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 22px 45px rgba(6, 62, 88, .13);
+}
+
+
+/* ========================================
+   CUSTOMER PHOTO
+======================================== */
+
+.review-photo {
+    width: 68px;
+    height: 68px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 4px solid #e8faf6;
+
+    display: block;
+
+    margin-bottom: 15px;
+}
+
+
+/* ========================================
+   STARS
+======================================== */
+
+.review-stars {
+    color: var(--orange);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 13px;
+}
+
+
+/* ========================================
+   REVIEW TEXT
+======================================== */
+
+.review-text {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    min-height: 70px;
+
+    margin: 0 0 18px;
+}
+
+
+/* ========================================
+   CUSTOMER NAME
+======================================== */
+
+.review-card h3 {
+    color: var(--text);
+
+    font-size: 16px;
+
+    margin: 0 0 5px;
+}
+
+
+.review-card > small {
+    color: #0b9a86;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+/* ========================================
+   SHARE EXPERIENCE
+======================================== */
+
+.review-action {
+    text-align: center;
+
+    margin-top: 42px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.review-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 14px 24px;
+
+    border-radius: 99px;
+
+    background: var(--aqua);
+
+    color: #073b4d;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    box-shadow: 0 10px 25px rgba(60, 193, 172, .20);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+}
+
+
+.review-btn:hover {
+    transform: translateY(-4px);
+
+    background: #32b6a2;
+
+    box-shadow:
+        0 15px 30px rgba(60, 193, 172, .30);
+}
+
+
+.review-btn span {
+    font-size: 15px;
+}
+
+
+/* ========================================
+   NO REVIEWS
+======================================== */
+
+.no-reviews {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    padding: 35px;
+}
+
+
+/* ========================================
+   ANIMATION
+======================================== */
+
+@keyframes reviewFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(8deg);
+    }
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 950px) {
+
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .reviews-section {
+        padding: 70px 0 75px;
+    }
+
+
+    .reviews-section .section-heading {
+        margin-bottom: 35px;
+    }
+
+
+    .reviews-section .section-heading h2 {
+        font-size: 40px;
+    }
+
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+
+        width: min(100% - 30px, 500px);
+    }
+
+
+    .review-card {
+        padding: 22px;
+    }
+
+
+    .review-text {
+        min-height: auto;
+    }
+
+
+    .review-btn {
+        width: calc(100% - 40px);
+        max-width: 320px;
+    }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 420px) {
+
+    .reviews-section .section-heading h2 {
+        font-size: 34px;
+    }
+
+
+    .reviews-section .section-heading p {
+        font-size: 13px;
+    }
+
+}
+
+
+
+/* ========================================
+   LAKSHADWEEP SPECIAL
+======================================== */
+
+.split {
+    position: relative;
+    padding: 95px 0 110px;
+
+    /* Soft ocean-mint background */
+    background:
+        radial-gradient(
+            circle at 78% 45%,
+            rgba(60, 193, 172, .18),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #e3f8f5 0%,
+            #cfeeea 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* ========================================
+   SOFT OCEAN BUBBLE
+======================================== */
+
+.split::before {
+    content: "";
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    background: rgba(60, 193, 172, .07);
+
+    right: -100px;
+    top: 80px;
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   DECORATIVE STAR
+======================================== */
+
+.split::after {
+    content: "✦";
+
+    position: absolute;
+
+    left: 8%;
+    bottom: 70px;
+
+    color: var(--aqua);
+    opacity: .12;
+
+    font-size: 30px;
+
+    animation: islandFloat 4s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   MAIN LAYOUT
+======================================== */
+
+.splitin {
+    display: grid;
+
+    grid-template-columns: 1.05fr .95fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ========================================
+   LEFT CONTENT
+======================================== */
+
+.splitin > div:first-child {
+    max-width: 590px;
+}
+
+
+.splitin > div:first-child > small {
+    display: block;
+
+    color: #0b9a86;
+
+    letter-spacing: 3px;
+
+    font-weight: 800;
+
+    font-size: 10px;
+
+    margin-bottom: 12px;
+}
+
+
+/* ========================================
+   HEADING
+======================================== */
+
+.split h2 {
+    font:
+        700 clamp(44px, 5vw, 62px)/1.02
+        "Playfair Display",
+        serif;
+
+    margin: 0 0 20px;
+
+    color: var(--navy);
+
+    letter-spacing: -1px;
+}
+
+
+.split h2 i {
+    color: var(--aqua);
+
+    font-style: italic;
+}
+
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.split p {
+    max-width: 560px;
+
+    color: var(--muted);
+
+    line-height: 1.8;
+
+    font-size: 14px;
+
+    margin: 0;
+}
+
+
+/* ========================================
+   STATS
+======================================== */
+
+.split .stats {
+    display: flex;
+
+    gap: 45px;
+
+    margin: 28px 0;
+}
+
+
+.split .stats > b {
+    font-size: 25px;
+
+    color: var(--navy);
+
+    line-height: 1;
+}
+
+
+.split .stats small {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 10px;
+
+    color: var(--muted);
+
+    font-weight: 500;
+}
+
+
+/* ========================================
+   CTA BUTTON
+======================================== */
+
+.split .aqua {
+    display: inline-flex;
+
+    padding: 14px 24px;
+
+    border-radius: 99px;
+
+    background: var(--aqua);
+
+    color: #073b4d;
+
+    font-weight: 800;
+
+    font-size: 12px;
+
+    box-shadow:
+        0 12px 28px rgba(60, 193, 172, .20);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.split .aqua:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 16px 35px rgba(60, 193, 172, .30);
+}
+
+
+/* ========================================
+   IMAGE SIDE
+======================================== */
+
+.island {
+    height: 420px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* ========================================
+   LARGE SOFT CIRCLE
+======================================== */
+
+.island::before {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(60, 193, 172, .10);
+
+    right: 80px;
+    top: 35px;
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   MAIN IMAGE
+======================================== */
+
+.island > div {
+    width: 330px;
+    height: 330px;
+
+    border: 11px solid #fff;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 50px rgba(6, 62, 88, .16);
+
+    position: relative;
+
+    z-index: 2;
+
+    animation:
+        islandImageFloat 5s ease-in-out infinite;
+}
+
+
+.island img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* ========================================
+   PALM
+======================================== */
+
+.island > span {
+    position: absolute;
+
+    right: 15px;
+    bottom: 35px;
+
+    font-size: 75px;
+
+    z-index: 3;
+
+    filter:
+        drop-shadow(0 8px 8px rgba(0,0,0,.08));
+
+    animation:
+        palmFloat 4s ease-in-out infinite;
+}
+
+
+/* ========================================
+   IMAGE LABEL
+======================================== */
+
+.island > b {
+    position: absolute;
+
+    left: 5px;
+    bottom: 40px;
+
+    background: #fff;
+
+    color: var(--navy);
+
+    padding: 14px 20px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 12px 30px rgba(6, 62, 88, .12);
+
+    font-size: 14px;
+
+    z-index: 4;
+}
+
+
+.island > b small {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    color: var(--muted);
+
+    letter-spacing: .5px;
+}
+
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes islandImageFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+@keyframes palmFloat {
+
+    0%,
+    100% {
+        transform: rotate(0deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(3deg) translateY(-6px);
+    }
+}
+
+
+@keyframes islandFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 950px) {
+
+    .splitin {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .splitin > div:first-child {
+        max-width: 700px;
+
+        margin: auto;
+
+        text-align: center;
+    }
+
+
+    .split p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .split .stats {
+        justify-content: center;
+    }
+
+
+    .island {
+        height: 390px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .split {
+        padding: 70px 0 80px;
+
+        background:
+            radial-gradient(
+                circle at 50% 40%,
+                rgba(60, 193, 172, .16),
+                transparent 45%
+            ),
+            linear-gradient(
+                180deg,
+                #e3f8f5 0%,
+                #cfeeea 100%
+            );
+    }
+
+
+    .split h2 {
+        font-size: 40px;
+    }
+
+
+    .split p {
+        font-size: 13px;
+    }
+
+
+    .split .stats {
+        gap: 25px;
+    }
+
+
+    .split .stats > b {
+        font-size: 22px;
+    }
+
+
+    .island {
+        height: 350px;
+    }
+
+
+    .island::before {
+        width: 290px;
+        height: 290px;
+
+        right: 50%;
+
+        transform: translateX(50%);
+    }
+
+
+    .island > div {
+        width: 275px;
+        height: 275px;
+    }
+
+
+    .island > span {
+        right: 5px;
+
+        bottom: 20px;
+
+        font-size: 58px;
+    }
+
+
+    .island > b {
+        left: 5px;
+
+        bottom: 20px;
+
+        padding: 12px 15px;
+
+        font-size: 12px;
+    }
+
+}
+
+
+/* //fotter// */
+
+.footer-contact a {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: inherit;
+    text-decoration: none;
+
+    margin-bottom: 10px;
+
+    transition: .25s ease;
+}
+
+.footer-contact a:hover {
+    color: var(--aqua);
+    transform: translateX(3px);
+}
+
+.footer-contact a span:first-child {
+    width: 25px;
+    text-align: center;
+    font-size: 15px;
+}
+
+
+/* ========================================
+   WEBSITE LOGO
+======================================== */
+
+.site-logo {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+
+    border: 3px solid rgba(255, 255, 255, .95);
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, .18);
+}
+
+
+/* Logo wrapper */
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+
+/* TripNest text */
+
+.logo > span {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1;
+}
+
+
+/* Travel & Holidays */
+
+.logo > span small {
+    margin-top: 5px;
+    color: var(--aqua);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+
+/* Fallback TN circle */
+
+.logo > b {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--aqua);
+    color: #073b4d;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    border: 3px solid rgba(255,255,255,.95);
+}
+
+
+/* Footer logo */
+
+.footer-logo > span {
+    color: var(--navy);
+}
+
+.footer-logo > span small {
+    color: var(--aqua);
+}
+
+
+/* Footer logo border can be slightly darker */
+
+.footer-logo .site-logo {
+    border-color: rgba(6, 62, 88, .15);
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .site-logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .logo > b {
+        width: 48px;
+        height: 48px;
+    }
+
+    .logo > span {
+        font-size: 18px;
+    }
+
+    .logo > span small {
+        font-size: 8px;
+    }
+
+}
+
+
+/* ========================================
+   FLOATING TRAVEL ANIMATIONS
+======================================== */
+
+.float {
+    position: fixed;
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0.8;
+    user-select: none;
+}
+
+/* 🐠 Fish */
+.fish {
+    left: -60px;
+    bottom: 20%;
+    font-size: 40px;
+    animation: swim 12s linear infinite;
+}
+
+/* ⛵ Boat */
+.boat {
+    right: 8%;
+    top: 25%;
+    font-size: 45px;
+    animation: boatFloat 4s ease-in-out infinite;
+}
+
+/* ✈ Plane */
+.plane {
+    left: 8%;
+    top: 30%;
+    font-size: 35px;
+    animation: fly 15s linear infinite;
+}
+
+
+/* Fish moves from left to right */
+@keyframes swim {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(110vw);
+    }
+}
+
+
+/* Plane moves across screen */
+@keyframes fly {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    50% {
+        transform: translateX(40vw) translateY(-20px);
+    }
+
+    100% {
+        transform: translateX(90vw) translateY(-40px);
+    }
+}
+
+
+/* Boat moves up and down */
+@keyframes boatFloat {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(4deg);
+    }
+}
+
+
+/* ========================================
+   OCEAN FLOATING ANIMATIONS
+======================================== */
+
+.float,
+.bubble,
+.sea-decoration {
+    position: fixed;
+    pointer-events: none;
+    user-select: none;
+    z-index: 10;
+}
+
+
+/* ========================================
+   FISH
+======================================== */
+
+.fish {
+    opacity: .55;
+}
+
+.fish1 {
+    left: -60px;
+    top: 42%;
+    font-size: 32px;
+    animation: fishSwim1 18s linear infinite;
+}
+
+.fish2 {
+    left: -80px;
+    top: 62%;
+    font-size: 25px;
+    animation: fishSwim2 24s linear infinite;
+    animation-delay: 5s;
+}
+
+.fish3 {
+    right: -60px;
+    top: 50%;
+    font-size: 30px;
+    animation: fishSwim3 20s linear infinite;
+    animation-delay: 2s;
+}
+
+
+/* Fish 1 → left to right */
+
+@keyframes fishSwim1 {
+
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    25% {
+        transform: translateX(25vw) translateY(-18px);
+    }
+
+    50% {
+        transform: translateX(50vw) translateY(10px);
+    }
+
+    75% {
+        transform: translateX(75vw) translateY(-15px);
+    }
+
+    100% {
+        transform: translateX(110vw) translateY(0);
+    }
+
+}
+
+
+/* Fish 2 → left to right */
+
+@keyframes fishSwim2 {
+
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    50% {
+        transform: translateX(55vw) translateY(-25px);
+    }
+
+    100% {
+        transform: translateX(115vw) translateY(5px);
+    }
+
+}
+
+
+/* Fish 3 → right to left */
+
+@keyframes fishSwim3 {
+
+    0% {
+        transform: translateX(0) translateY(0) scaleX(-1);
+    }
+
+    50% {
+        transform: translateX(-50vw) translateY(-20px) scaleX(-1);
+    }
+
+    100% {
+        transform: translateX(-115vw) translateY(5px) scaleX(-1);
+    }
+
+}
+
+
+/* ========================================
+   BUBBLES
+======================================== */
+
+.bubble {
+    width: 12px;
+    height: 12px;
+
+    border: 2px solid rgba(255,255,255,.65);
+    border-radius: 50%;
+
+    opacity: .55;
+
+    bottom: -30px;
+
+    animation: bubbleRise 10s linear infinite;
+}
+
+
+/* Different bubble sizes */
+
+.bubble1 {
+    left: 12%;
+    width: 10px;
+    height: 10px;
+    animation-delay: 0s;
+}
+
+.bubble2 {
+    left: 25%;
+    width: 18px;
+    height: 18px;
+    animation-delay: 3s;
+}
+
+.bubble3 {
+    left: 40%;
+    width: 8px;
+    height: 8px;
+    animation-delay: 6s;
+}
+
+.bubble4 {
+    left: 55%;
+    width: 14px;
+    height: 14px;
+    animation-delay: 2s;
+}
+
+.bubble5 {
+    left: 68%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 5s;
+}
+
+.bubble6 {
+    left: 78%;
+    width: 9px;
+    height: 9px;
+    animation-delay: 8s;
+}
+
+.bubble7 {
+    left: 88%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 4s;
+}
+
+.bubble8 {
+    left: 92%;
+    width: 7px;
+    height: 7px;
+    animation-delay: 1s;
+}
+
+
+/* Bubble movement */
+
+@keyframes bubbleRise {
+
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .55;
+    }
+
+    50% {
+        transform: translateY(-45vh) translateX(20px);
+    }
+
+    80% {
+        opacity: .35;
+    }
+
+    100% {
+        transform: translateY(-110vh) translateX(-15px);
+        opacity: 0;
+    }
+
+}
+
+
+/* ========================================
+   BOAT
+======================================== */
+
+.boat {
+    right: 7%;
+    top: 25%;
+    font-size: 38px;
+    opacity: .5;
+
+    animation: boatFloat 5s ease-in-out infinite;
+}
+
+@keyframes boatFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(3deg);
+    }
+
+}
+
+
+/* ========================================
+   PLANE
+======================================== */
+
+.plane {
+    left: 8%;
+    top: 30%;
+    font-size: 28px;
+    opacity: .35;
+
+    animation: planeFly 18s linear infinite;
+}
+
+@keyframes planeFly {
+
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    50% {
+        transform: translateX(40vw) translateY(-25px);
+    }
+
+    100% {
+        transform: translateX(100vw) translateY(-45px);
+    }
+
+}
+
+
+/* ========================================
+   SMALL SEA DECORATIONS
+======================================== */
+
+.sea-decoration {
+    opacity: .22;
+    font-size: 25px;
+}
+
+.shell1 {
+    left: 5%;
+    bottom: 18%;
+    animation: decorationFloat 5s ease-in-out infinite;
+}
+
+.shell2 {
+    right: 6%;
+    bottom: 25%;
+    font-size: 28px;
+    animation: decorationFloat 6s ease-in-out infinite;
+}
+
+.star1 {
+    left: 18%;
+    top: 70%;
+    font-size: 16px;
+    animation: decorationFloat 4s ease-in-out infinite;
+}
+
+.star2 {
+    right: 20%;
+    top: 60%;
+    font-size: 18px;
+    animation: decorationFloat 5s ease-in-out infinite;
+}
+
+@keyframes decorationFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(8deg);
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .fish {
+        font-size: 22px;
+    }
+
+    .fish1 {
+        animation-duration: 14s;
+    }
+
+    .fish2 {
+        animation-duration: 18s;
+    }
+
+    .fish3 {
+        animation-duration: 16s;
+    }
+
+    .boat {
+        font-size: 28px;
+    }
+
+    .plane {
+        font-size: 22px;
+    }
+
+    .sea-decoration {
+        font-size: 18px;
+    }
+
+}
+
+
+/* slide */
+
+/* ========================================
+   HERO TEXT
+======================================== */
+
+.heroText {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 5;
+
+    width: 100%;
+    max-width: 1200px;
+
+    color: #fff;
+}
+
+
+/* Small heading */
+
+.heroText > small {
+    display: block;
+
+    color: #38d1bd;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Main heading */
+
+.heroText h1 {
+    max-width: 700px;
+
+    margin: 0 0 20px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(48px, 6vw, 82px);
+
+    line-height: 1.02;
+
+    font-weight: 800;
+
+    color: #fff;
+
+    text-shadow:
+        0 3px 20px rgba(0, 0, 0, .25);
+}
+
+
+/* Subtitle */
+
+.heroText p {
+    max-width: 600px;
+
+    margin: 0 0 30px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #fff;
+
+    text-shadow:
+        0 2px 10px rgba(0, 0, 0, .3);
+}
+
+
+/* ========================================
+   HERO BUTTONS
+======================================== */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+/* Main button */
+
+.heroText .lime {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 15px 28px;
+
+    border-radius: 999px;
+
+    background: #caff3d;
+
+    color: #073b4d;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition: .3s ease;
+}
+
+
+.heroText .lime:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(202, 255, 61, .25);
+}
+
+
+/* Second button */
+
+.hero-outline {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 14px 28px;
+
+    border: 1px solid rgba(255,255,255,.8);
+
+    border-radius: 999px;
+
+    color: #fff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    background: rgba(255,255,255,.04);
+
+    transition: .3s ease;
+}
+
+
+.hero-outline:hover {
+    background: rgba(255,255,255,.15);
+
+    transform: translateY(-3px);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .heroText {
+        padding: 0 25px;
+    }
+
+    .heroText > small {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 14px;
+    }
+
+    .heroText h1 {
+        font-size: 44px;
+
+        max-width: 500px;
+    }
+
+    .heroText p {
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+    }
+
+    .heroText .lime,
+    .hero-outline {
+        padding: 12px 20px;
+
+        font-size: 12px;
+    }
+
+}

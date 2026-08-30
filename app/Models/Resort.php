@@ -1,0 +1,1 @@
+<?php namespace App\Models; use Illuminate\Database\Eloquent\Model; class Resort extends Model{protected $fillable=['name','location','description','image_path','rating','price_from','amenities','active','sort_order'];protected $casts=['amenities'=>'array','active'=>'boolean'];}

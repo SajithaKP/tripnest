@@ -1,0 +1,1 @@
+<?php namespace App\Models; use Illuminate\Database\Eloquent\Model; class Slide extends Model{protected $fillable=['title','subtitle','button_text','button_url','media_type','media_path','poster_path','active','sort_order'];protected $casts=['active'=>'boolean'];}
