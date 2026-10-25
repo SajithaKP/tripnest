@@ -133,5 +133,14 @@ Route::prefix('admin')
 
         
     });
+    
+    
+    Route::get('/sitemap.xml', function () {
+    $packages = \App\Models\Package::where('active', 1)
+        ->whereNotNull('slug')
+        ->get();
 
-
+    return response()
+        ->view('sitemap', compact('packages'))
+        ->header('Content-Type', 'application/xml');
+});

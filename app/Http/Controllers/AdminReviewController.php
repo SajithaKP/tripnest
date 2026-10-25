@@ -13,7 +13,8 @@ class AdminReviewController extends Controller
     {
         $reviews = Review::latest()->get();
 
-        return view('admin.reviews.index', compact('reviews'));
+        // return view('admin.reviews.index', compact('reviews'));
+         return view('reviews.index', compact('reviews'));
     }
 
     public function approve(Review $review)

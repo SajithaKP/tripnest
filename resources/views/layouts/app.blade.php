@@ -4,7 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>@yield('title', 'TripNest') | Travel Beyond Expectations</title>
+    <!--<title>@yield('title', 'TripNest') | Travel Beyond Expectations</title>-->
+    <title>@yield('title', 'TripNest | Lakshadweep & India Travel Packages')</title>
+
+    <meta name="description"
+        content="@yield('description', 'Explore Lakshadweep and India travel packages with TripNest. Discover curated holidays, island adventures, resorts and memorable travel experiences.')">
+    
+    <meta name="robots" content="index, follow">
+
+<link rel="canonical" href="{{ url()->current() }}">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
@@ -140,7 +149,7 @@
 
                 <a href="mailto:tripnesr786@gmail.com">
                     <span>✉</span>
-                    <span>tripnesr786@gmail.com</span>
+                    <span>tripnest786@gmail.com</span>
                 </a>
 
                 <a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME"

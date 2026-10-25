@@ -27,7 +27,7 @@ class ReviewController extends Controller
 
             'review' => 'required|string|max:2000',
 
-            'photo' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'photo' => 'nullable|image|mimes:jpg,jpeg,png,webp',
         ]);
 
         if ($request->hasFile('photo')) {
