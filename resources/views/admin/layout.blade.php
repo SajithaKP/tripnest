@@ -22,6 +22,7 @@
             </a>
 
             <a href="{{ route('admin.content.index', 'inquiries') }}">✉ Inquiries</a>
+            <a href="{{ route('admin.travel-management.index') }}"> ✈️ Travel Management</a>
         </nav>
         <form method="POST" action="{{ route('admin.logout') }}">@csrf<button>⇥ Logout</button></form>
     </aside>

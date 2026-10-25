@@ -10,7 +10,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminReviewController;
 use App\Http\Controllers\AdminSettingController;
 use App\Http\Controllers\ReviewController;
-
+use App\Http\Controllers\Admin\TravelManagementController;
 
 // ======================================================
 // PUBLIC WEBSITE
@@ -96,6 +96,19 @@ Route::prefix('admin')
             ->name('reviews.destroy');
 
 
+        Route::prefix('travel-management')
+        ->name('travel-management.')
+        ->controller(TravelManagementController::class)
+        ->group(function () {
+            Route::get('/', 'index')->name('index');
+            Route::get('/create', 'create')->name('create');
+            Route::post('/', 'store')->name('store');
+            Route::get('/{travelRecord}/edit', 'edit')->name('edit');
+            Route::put('/{travelRecord}', 'update')->name('update');
+            Route::delete('/{travelRecord}', 'destroy')->name('destroy');
+        });
+
+
         // ----------------------------------------------
         // GENERIC CONTENT MANAGEMENT
         // ----------------------------------------------
@@ -118,4 +131,7 @@ Route::prefix('admin')
         Route::delete('/{type}/{id}', [AdminController::class, 'destroy'])
             ->name('content.destroy');
 
+        
     });
+
+
