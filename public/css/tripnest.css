@@ -2626,3 +2626,45 @@ footer {
     }
 
 }
+
+
+/* Footer contact details */
+.footer-contact {
+    min-width: 0;
+}
+
+.footer-contact .footer-phone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    white-space: nowrap;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.footer-contact .contact-icon {
+    flex: 0 0 18px;
+    width: 18px;
+    text-align: center;
+}
+
+.footer-contact > a:not(.footer-phone) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+.footer-contact > p {
+    margin-top: 16px;
+}
+
+/* Mobile layout */
+@media (max-width: 650px) {
+    .footer-contact .footer-phone {
+        white-space: normal;
+    }
+}
+

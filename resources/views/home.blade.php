@@ -332,7 +332,7 @@
         <div><small>LET'S TALK TRAVEL</small>
             <h2>Tell us where you want to <i>go.</i></h2>
             <p>Send your requirements and our team will contact you with dates, package options and pricing.</p>
-            <div class="points"><b>📞 +91 96339 14161</b><b>✉ hello@tripnest.in</b><b>📍 Kerala, India</b></div>
+            <div class="points"><b>📞 +91 73563 22346</b><b>📞 +91 94960 68923</b><b>📞 +91 83010 22346</b><b>✉ tripnest786@gmail.com</b><b>📍 Kerala, India</b></div>
         </div>
         <form method="POST" action="{{ route('contact.store') }}">@csrf<label>Name<input name="name"
                     required></label>

@@ -133,13 +133,23 @@
 
                 <h4>Contact</h4>
 
-                <a href="tel:+918301022346">
-                    <span>📞</span>
-                    <span>+91 8301022346</span>
+                <a href="tel:+917356322346" class="footer-phone">
+                    <span class="contact-icon">📞</span>
+                    <span>+91 73563 22346</span>
+                </a>
+
+                <a href="tel:+918301022346" class="footer-phone">
+                    <span class="contact-icon">📞</span>
+                    <span>+91 83010 22346</span>
+                </a>
+
+                <a href="tel:+919633914161" class="footer-phone">
+                    <span class="contact-icon">📞</span>
+                    <span>+91 96339 14161</span>
                 </a>
 
                 <a
-                    href="https://wa.me/918301022346?text=Hello%20TripNest%2C%20I%20would%20like%20to%20know%20about%20your%20tour%20packages."
+                    href="https://wa.me/9173563 22346?text=Hello%20TripNest%2C%20I%20would%20like%20to%20know%20about%20your%20tour%20packages."
                     target="_blank"
                     rel="noopener noreferrer"
                 >
@@ -147,12 +157,12 @@
                     <span>WhatsApp Us</span>
                 </a>
 
-                <a href="mailto:tripnesr786@gmail.com">
+                <a href="mailto:tripnest786@gmail.com">
                     <span>✉</span>
                     <span>tripnest786@gmail.com</span>
                 </a>
 
-                <a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME"
+                <a href="https://www.instagram.com/tripnest_voyage_llp?utm_source=qr&dlrf=ZWg3cDhnODh5c21v"
                 target="_blank"
                 rel="noopener noreferrer">
                     <span>📸</span>
